@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1 id="title">🌱 Smart Farmer Assistant</h1>
+<p>Herbal-Based Plant Disease Detection & Solutions</p>
+
+<!-- 🌍 Language Buttons -->
+<div style="margin-top:10px;">
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('mr')">मराठी</button>
+    <button onclick="setLang('hi')">हिंदी</button>
+</div>
+
+<style>
+
+/* 🍃 FLOATING LEAVES */
+.leaves span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatLeaf 12s linear infinite;
+    z-index: 0;
+}
+
+.leaves span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.leaves span:nth-child(2) { left: 30%; animation-delay: 3s; }
+.leaves span:nth-child(3) { left: 50%; animation-delay: 6s; }
+.leaves span:nth-child(4) { left: 70%; animation-delay: 2s; }
+.leaves span:nth-child(5) { left: 90%; animation-delay: 5s; }
+
+@keyframes floatLeaf {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    30% { opacity: 1; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* 🍃 FLOATING LEAVES */
+.leaves span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatLeaf 10s linear infinite;
+}
+
+.leaves span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.leaves span:nth-child(2) { left: 30%; animation-delay: 2s; }
+.leaves span:nth-child(3) { left: 50%; animation-delay: 4s; }
+.leaves span:nth-child(4) { left: 70%; animation-delay: 6s; }
+.leaves span:nth-child(5) { left: 90%; animation-delay: 8s; }
+
+@keyframes floatLeaf {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* 🌈 ANIMATED BACKGROUND */
+/* 🌈 ANIMATED GRADIENT BACKGROUND */
+body {
+    margin: 0;
+    font-family: Arial;
+
+    background: linear-gradient(-45deg, #2e8b57, #3cb371, #90ee90, #e6ffe6);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+
+    overflow-x: hidden;
+    background-image:url('https://png.pngtree.com/thumb_back/fh260/background/20240725/pngtree-the-concept-of-new-farming-or-smart-farming-agricultural-technology-image_15917909.jpg;')
+}
+
+/* 🌊 GRADIENT ANIMATION */
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* ANIMATION KEYFRAMES */
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.welcome-card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 900px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-shadow: #f9fff9;
+    background-image:url("C:\Users\kotal\OneDrive\FA\bg for web 1.jpeg")
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #eef7ee;
+}
+
+/* 🌾 HEADER WITH IMAGE */
+header {
+    background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+}
+
+header button {
+    background: white;
+    color: #2e8b57;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dark overlay for readability */
+header::before {
+    content: "";
+    position: absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.5);
+}
+
+header h1, header p {
+    position: relative;
+    z-index: 1;
+}
+
+/* NAVBAR */
+nav {
+    background: #246b45;
+    text-align: center;
+    padding: 12px;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* SECTIONS */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* BUTTON */
+button {
+    background: linear-gradient(45deg, #6fca96, #3cb371);
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    align-items: center;
+}
+
+button:hover {
+    background: #246b45;
+}
+
+/* RESULT BOX */
+.solution {
+    background: #e6ffe6;
+    padding: 15px;
+    margin-top: 10px;
+    display: none;
+    border-left: 5px solid green;
+    border-radius: 8px;
+}
+
+/* 🌿 PLANT CARDS */
+.plant-card {
+    background: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border-left: 6px solid #2e8b57;
+}
+
+/* 🌾 TIPS */
+.tip-box {
+    background: white;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* FOOTER */
+footer {
+    background: #2e8b57;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* PREMIUM SMALL BUTTONS */
+button {
+    background: linear-gradient(135deg, #2e8b57, #3cb371);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    width: auto;
+    display: inline-block;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* PREMIUM CARD */
+.premium-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* SUB CARD */
+.sub-card {
+    background: #ffffff;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.sub-card:hover {
+    transform: translateY(-3px);
+}
+
+header {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    background: #eaeaea;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #2e8b57, #3cb371);
+    color: white;
+}
+
+.upload-box {
+    border: 2px dashed #2e8b57;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: #f9fff9;
+    transition: all 0.3s;
+}
+
+.upload-box:hover {
+    background: #e6ffe6;
+    transform: scale(1.02);
+}
+
+.result-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f0fff0;
+    border-left: 6px solid #2e8b57;
+    border-radius: 12px;
+    display: none;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="leaves">
+    <span>🍃</span>
+    <span>🌿</span>
+    <span>🍃</span>
+    <span>🌿</span>
+    <span>🍃</span>
+</div>
+
+<header>
+<h1>🌱 Smart Farmer Assistant</h1>
+<p>Herbal-Based Plant Disease Detection & Solutions</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#detect">Detection</a>
+<a href="#plants">Crop suggestions</a>
+<a href="#tips">Farming Tips</a>
+<a href="#qa">Q&A</a>
+</nav>
+
+<section id="home">
+<div class="welcome-card">
+    <div class="welcome-content">
+        <h2>👨‍🌾 Welcome Farmers <span>🌱</span></h2>
+        <p>
+            This system focuses on <b>eco-friendly herbal farming</b> 🌿 and helps 
+            detect plant diseases using <b>smart AI-based solutions</b>.
+        </p>
+    </div>
+</div>
+</section>
+
+<section id="detect">
+
+<div class="card detection-card">
+
+<h2 id="detectTitle">🧪 Plant Disease Detection</h2>
+<p style="color: gray;">Choose a symptom or upload an image to detect plant disease</p>
+
+<!-- 🔍 Symptom Detection -->
+<div class="premium card">
+    <h3>🔍 Symptom-Based Detection</h3>
+
+    <label>Select Symptom:</label>
+    <select id="symptom">
+        <option>Yellow Leaves</option>
+        <option>Black Spots</option>
+        <option>Leaf Curl</option>
+        <option>White Powder</option>
+        <option>Brown Rot</option>
+        <option>Wilting</option>
+        <option>Leaf Mold</option>
+    </select>
+
+    <button  onclick="detect()">Detect Disease</button>
+</div>
+
+<!-- 📷 Image Detection -->
+<div class="premium card">
+    <h3>📷 Image-Based Detection</h3>
+
+    <div class="upload-box" onclick="document.getElementById('image').click()">
+        <p>Click or Upload Plant Image</p>
+        <input type="file" id="image" hidden onchange="previewImage(event)">
+    </div>
+
+    <img id="preview" style="display:none; width:100%; margin-top:10px; border-radius:10px;">
+
+    <button onclick="upload()">Detect from Image</button>
+</div>
+
+<!-- RESULT -->
+<div id="result" class="solution"></div>
+<button onclick="speakResult()">🔊 Speak</button>
+
+</div>
+
+</section>
+
+<!-- 🌿 PLANT INFO -->
+<section id="plants">
+<h2>🌱 Crop Suggestions</h2>
+
+<div class="plant-card">
+<h2>🍅 Tomato Plant</h2>
+            <p><strong>Weather:</strong> Warm climate, grows best in sunny conditions.</p>
+            <p><strong>Soil:</strong> Fertile, well-drained soil rich in organic matter.</p>
+            <p><strong>Water:</strong> Regular watering required, avoid waterlogging.</p>
+            <p><strong>Care:</strong> Needs support (staking), proper spacing, and pruning.</p>
+            <p><strong>Common Problems:</strong> Leaf spots, blight, yellow leaves.</p>
+            <p>🔗 <a href="https://en.wikipedia.org/wiki/Tomato" target="_blank">Learn More</a></p>
+</div>
+
+<div class="plant-card">
+  <h2>🥔 Potato Plant</h2>
+            <p><strong>Weather:</strong> Cool climate, grows best in winter or mild temperatures.</p>
+            <p><strong>Soil:</strong> Loose, sandy soil for proper tuber growth.</p>
+            <p><strong>Water:</strong> Moderate watering, especially during tuber formation.</p>
+            <p><strong>Care:</strong> Earthing up soil around plant, weed control important.</p>
+            <p><strong>Common Problems:</strong> Rot, scab, blight diseases.</p>
+<p>🔗 <a href="https://en.wikipedia.org/wiki/Potato" target="_blank">Learn More</a></p>
+</div>
+
+<div class="plant-card">
+<h2>🌶 Chili Plant</h2>
+            <p><strong>Weather:</strong> Warm and humid climate with good sunlight.</p>
+            <p><strong>Soil:</strong> Well-drained soil with good fertility.</p>
+            <p><strong>Water:</strong> Light but frequent watering required.</p>
+            <p><strong>Care:</strong> Protect from pests, avoid overwatering.</p>
+            <p><strong>Common Problems:</strong> Leaf curl, powdery mildew, pest attacks.</p>
+<p>🔗 <a href="https://en.wikipedia.org/wiki/Chili_pepper" target="_blank">Learn More</a></p>
+</div>
+
+<div class="plant-card">
+<h2>🍆 Brinjal Plant</h2>
+            <p><strong>Weather:</strong> Warm tropical climate.</p>
+            <p><strong>Soil:</strong> Fertile, well-drained soil.</p>
+            <p><strong>Water:</strong> Regular watering required.</p>
+            <p><strong>Care:</strong> Needs pest control and proper sunlight.</p>
+            <p><strong>Common Problems:</strong> Wilt, borers, fungal diseases.</p>
+<p>🔗 <a href="https://en.wikipedia.org/wiki/Eggplant" target="_blank">Learn More</a></p>
+</div>
+
+</section>
+
+<!-- 🌾 FARMING TIPS -->
+<section id="tips">
+<h2 id="tipsTitle">🌾 Smart Herbal Farming Tips</h2>
+
+<div class="card" style="display:flex; align-items:center; align-items:center; gap:20px;">
+🌱 <div><b>Crop Rotation</b><br>Crop rotation is the practice of planting different types of crops in the same area across sequential seasons. Instead of growing the same plant (monoculture), which drains the soil of specific nutrients, you rotate crops to keep the land "balanced" and healthy.</div>
+</div>
+
+<div class="card" style="display:flex; align-items:center; gap:20px;">
+💧 <div><b>Irrigation</b><br>Proper watering, or irrigation, is the controlled application of water to crops to ensure they get the right amount of moisture at the right time. The goal is to provide enough water for growth without wasting resources or drowning the roots.</div>
+</div>
+
+<div class="card" style="display:flex; align-items:center; gap:20px;">
+🌿 <div><b>Organic Compost</b><br>Organic compost is decomposed organic matter- like food scraps, leaves, and manure-that has been broken down by microorganisms. Often called "Black Gold," it is used to enrich soil and help plants thrive without synthetic chemicals.</div>
+</div>
+
+<div class="card" style="display:flex; align-items:center; gap:20px;">
+🐞 <div><b>Pest Control</b><br>Pest control in farming is the strategic management of organisms-like insects, weeds, fungi, and rodents- that damage crops and reduce harvests. The goal is rarely to "kill everything," but rather to manage pest populations so they don't cause significant economic damage while keeping the ecosystem healthy.</div>
+</div>
+
+<div class="card" style="display:flex; align-items:center; gap:20px;">
+🌱🌱🌱🌱 <div><b>Vertical Integration</b><br> space is limited, use vertical A-frame hydroponics. Herbs are lightweight and have shallow root systems, making them perfect for "stacking" to triple your production per square foot.<br></div>
+</div>
+
+</section>
+
+<section id="qa">
+        <div class="card">
+            <h2>Farmer Question & Answer Section</h2>
+            <label>Ask Your Question:</label>
+            <textarea rows="4" placeholder="Write your farming question here..."></textarea>
+            <button onclick="submitQuestion()">Submit Question</button>
+            <p id="qaMessage"></p>
+        </div>
+    </section>
+
+    <div class="card">
+            <h2>Contact Support</h2>
+            <p>Email: support@farmerhelper.com</p>
+            <p>Phone: +91 9012465525</p>
+        </div>
+
+        <footer>
+        <p>© 2026 Farmer Plant Disease Helper | Designed for Farmers</p>
+    </footer>
+
+<script>
+
+let lastSpokenText = "";
+let currentLang = "en";
+
+function speakResult() {
+
+    if (!lastSpokenText) {
+        alert("No result to speak");
+        return;
+    }
+
+    let speech = new SpeechSynthesisUtterance(lastSpokenText);
+
+    // 🌍 SET LANGUAGE
+    if (currentLang === "mr") {
+        speech.lang = "mr-IN";
+    } 
+    else if (currentLang === "hi") {
+        speech.lang = "hi-IN";
+    } 
+    else {
+        speech.lang = "en-US";
+    }
+
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+}
+
+// 🌍 LABEL TRANSLATIONS
+const uiText = {
+    en: {
+        title: "🌱 Smart Farmer Assistant",
+        detect: "🧪 Plant Disease Detection",
+        tips: "🌾 Smart Herbal Farming Tips",
+        detecting: "Detecting disease..."
+    },
+    mr: {
+        title: "🌱 स्मार्ट शेतकरी सहाय्यक",
+        detect: "🧪 रोग शोध",
+        tips: "🌾 शेती टिप्स",
+        detecting: "रोग तपासला जात आहे..."
+    },
+    hi: {
+        title: "🌱 स्मार्ट किसान सहायक",
+        detect: "🧪 रोग पहचान",
+        tips: "🌾 खेती सुझाव",
+        detecting: "रोग की जांच हो रही है..."
+    }
+};
+
+// 🌍 CHANGE LANGUAGE
+function setLang(lang) {
+    currentLang = lang;
+
+    document.getElementById("title").innerText = uiText[lang].title;
+    document.getElementById("detectTitle").innerText = uiText[lang].detect;
+    document.getElementById("tipsTitle").innerText = uiText[lang].tips;
+}
+
+// 🌟 RESULT DISPLAY
+function showResult(data) {
+
+    let t = uiText[currentLang];
+    let box = document.getElementById("result");
+
+    box.style.display = "block";
+    box.innerHTML = t.detecting;
+
+    setTimeout(() => {
+
+        let text = `
+        ${data.disease}.
+        ${data.cause || ""}.
+        ${data.chemical}.
+        ${data.herbal}.
+        ${data.prevention}.
+        Severity ${data.severity}.
+        `;
+
+        lastSpokenText = text; // ✅ SAVE FOR VOICE
+
+        box.innerHTML = `
+        <b>🌿 ${data.disease}</b><br>
+        <b>📊 ${data.severity}</b><br>
+        <b>⚠ ${data.cause || "-"}</b><br><br>
+
+        🧪 ${data.chemical}<br>
+        🔗 <a href="${data.link}" target="_blank">Link</a><br><br>
+
+        🌿 ${data.herbal}<br>
+        🛡 ${data.prevention}
+        `;
+
+    }, 1000);
+}
+
+// 🔍 SYMPTOM
+function detect(){
+let s=document.getElementById("symptom").value;
+
+fetch("http://127.0.0.1:5000/api/symptom",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body: JSON.stringify({
+    symptom: s,
+    lang: currentLang   // 🔥 IMPORTANT
+})
+})
+.then(r=>r.json())
+.then(d=>{
+    showResult(d);
+});
+}
+
+// 📷 IMAGE
+function upload(){
+let f=document.getElementById("image").files[0];
+
+if(!f){alert("Select image");return;}
+
+let fd=new FormData();
+fd.append("image",f);
+
+fetch("http://127.0.0.1:5000/api/predict",{
+method:"POST",
+body:fd
+})
+.then(r=>r.json())
+.then(d=>{
+    showResult(d);
+});
+}
+
+// IMAGE PREVIEW
+function previewImage(event) {
+    let file = event.target.files[0];
+    let reader = new FileReader();
+
+    reader.onload = function() {
+        let img = document.getElementById("preview");
+        img.src = reader.result;
+        img.style.display = "block";
+    };
+
+    reader.readAsDataURL(file);
+}
+
+</script>
+
+</body>
+</html>
