@@ -14,10 +14,13 @@ A web-based application that helps farmers detect crop diseases using image uplo
 ## 🛠 Tech Stack
 - HTML, CSS, JavaScript
 - Python (Flask)
-- Machine Learning
 
 ## 📸 Screenshots
-(Add your UI images here)
+<img width="1896" height="900" alt="Screenshot 2026-04-21 204559" src="https://github.com/user-attachments/assets/2acedbd4-93d6-4e3e-ad6d-a7cba0585d94" />
+<img width="1877" height="830" alt="Screenshot 2026-04-21 204657" src="https://github.com/user-attachments/assets/e05115be-6cb4-4bf1-9279-396e39865f88" />
+
+
+
 
 ## 📌 Future Improvements
 - Offline support
